@@ -55,7 +55,7 @@ Escala sobre el lienzo de 1080×1350:
 
 | Rol | Tamaño | Peso | Notas |
 |---|---|---|---|
-| Numeral | 290px | 900 | Naranja con trazo blanco de 8px. Centrado contra el bloque del titular. |
+| Numeral | 290px | 900 | Naranja con trazo blanco de 8px, `paint-order: stroke fill`. Centrado contra el bloque del titular. |
 | Titular | 72px | 700 | `line-height: 1.02`. Máximo 3 líneas. |
 | Remate (portada) | 64px | 900 itálica | Mayúsculas. |
 | NO | 60px | 900 | |
@@ -63,19 +63,41 @@ Escala sobre el lienzo de 1080×1350:
 | Cuerpo | 28px | 500 | `line-height: 1.35`. Máximo 4 líneas. |
 | Handle | 34px | 700 | |
 
-### Un solo margen para el texto
+### El sistema de márgenes
 
-Todo el texto corrido —titular, cuerpo y el remate de portada— arranca en la misma
-vertical: `--texto`, a 252px del borde. Ese margen no se negocia por placa; es lo que
-hace que el carrusel se lea como una serie y no como cinco piezas sueltas.
+Esto es lo que hace que una placa se vea ordenada y que cinco placas se lean como
+una serie. No es una preferencia: es la retícula.
 
-A la izquierda de esa vertical queda un canal reservado para los elementos que **no**
-son texto: el numeral, y el badge con el NO. Ese canal mide exactamente lo mismo en
-las dos plantillas, y la regla vertical del desmentido cae justo en el margen, marcándolo.
+Hay **dos verticales** y ninguna se negocia por placa:
 
-Si el titular necesita más aire, se baja el cuerpo del texto, nunca se mueve el margen.
+- **Margen exterior, 72px.** Donde arranca todo lo que es un bloque: el numeral, el
+  badge con el NO, el remate de portada.
+- **Margen de texto, 252px.** Donde arranca el texto que convive con el numeral:
+  el titular y el cuerpo.
+
+A la izquierda del margen de texto queda un canal reservado. Ahí viven el numeral y
+el veredicto, y nada de texto corrido entra. La regla vertical del desmentido cae
+justo sobre el margen de texto: no es un adorno, lo marca.
+
+Por la derecha, nada cruza los 1008px. El texto queda en bandera —las líneas no
+tienen por qué terminar iguales—, pero ninguna se pasa.
+
+El remate de portada va al margen exterior, alineado con el numeral, no con el
+titular: es un bloque, no una línea más del titular.
+
+Si el titular pide más aire, se mueve el bloque hacia abajo. El margen no se toca.
 
 Nunca centres un titular. Lo único centrado en la placa es el handle del pie.
+
+### Compruébalo, no lo mires
+
+```bash
+python3 assets/verificar.py salida.png
+```
+
+Reporta dónde arranca y dónde termina cada bloque, y falla si algo no cae en una de
+las dos verticales o si cruza el margen derecho. Pásalo después de cada export: los
+desajustes de 4 o 6px son invisibles en pantalla y saltan a la vista en el feed.
 
 ## Formatos
 

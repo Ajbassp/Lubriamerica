@@ -92,9 +92,10 @@ body{
 }
 .portada .remate{
   clear:both;display:flex;align-items:center;gap:26px;margin-top:30px;
-  /* alineado al mismo margen que el titular; ponlo en 0 si lo quieres
-     al borde exterior como en las piezas originales */
-  margin-left:calc(var(--texto) - var(--margen));
+  /* Vuelve al margen exterior, alineado con el numeral: el remate es un
+     elemento de bloque, no texto del canal derecho. El -6px compensa el
+     lateral que la itálica Black deja antes del primer trazo. */
+  margin-left:-6px;
   font-size:64px;font-weight:900;font-style:italic;text-transform:uppercase;
 }
 

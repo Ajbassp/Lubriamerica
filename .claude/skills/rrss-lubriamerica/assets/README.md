@@ -6,6 +6,7 @@
 | `plantilla-portada.html` | Portada: numeral dentro del titular + remate. |
 | `plantilla-carrusel.html` | Slide interior: numeral en columna + desmentido. |
 | `render.sh` | Exporta a PNG. |
+| `verificar.py` | Comprueba los márgenes del PNG exportado. |
 | `fonts/Kanit-*.ttf` | Listo. |
 | `logo/marca.svg` | Calcado del isotipo. Reemplazable por el original. |
 
