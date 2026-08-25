@@ -1,31 +1,18 @@
-<!-- Isotipo Lubriamérica, calcado del logotipo para usarse como marca de agua.
-     La placa lo pinta como máscara: solo se lee el canal alfa, el color da igual.
-     Si aparece el archivo original (SVG o PNG con transparencia), reemplázalo. -->
+<!-- Engranaje solo, para marca de agua. A opacidad baja lee mejor que el
+     isotipo completo, donde la gota y el aro se empastan.
+     La placa lo pinta como máscara: solo cuenta el canal alfa. -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="#000">
-  <defs>
-    <mask id="halo">
-      <rect width="400" height="400" fill="#fff"/>
-      <!-- gota agrandada: abre el aro blanco que separa la gota del engranaje -->
-      <path d="M 197 20 C 197 20, 297 168, 297 246 A 100 100 0 1 1 97 246 C 97 168, 197 20, 197 20 Z" fill="#000" transform="translate(197 232) scale(1.08) translate(-197 -232)"/>
-    </mask>
-  </defs>
-
-  <g mask="url(#halo)">
-      <rect x="184" y="30" width="32" height="30" rx="7"/>
-      <rect x="184" y="30" width="32" height="30" rx="7" transform="rotate(30 200 212)"/>
-      <rect x="184" y="30" width="32" height="30" rx="7" transform="rotate(60 200 212)"/>
-      <rect x="184" y="30" width="32" height="30" rx="7" transform="rotate(90 200 212)"/>
-      <rect x="184" y="30" width="32" height="30" rx="7" transform="rotate(120 200 212)"/>
-      <rect x="184" y="30" width="32" height="30" rx="7" transform="rotate(150 200 212)"/>
-      <rect x="184" y="30" width="32" height="30" rx="7" transform="rotate(180 200 212)"/>
-      <rect x="184" y="30" width="32" height="30" rx="7" transform="rotate(210 200 212)"/>
-      <rect x="184" y="30" width="32" height="30" rx="7" transform="rotate(240 200 212)"/>
-      <rect x="184" y="30" width="32" height="30" rx="7" transform="rotate(270 200 212)"/>
-      <rect x="184" y="30" width="32" height="30" rx="7" transform="rotate(300 200 212)"/>
-      <rect x="184" y="30" width="32" height="30" rx="7" transform="rotate(330 200 212)"/>
-    <circle cx="200" cy="212" r="140" fill="none" stroke="#000" stroke-width="38"/>
-    <path d="M 150 66 C 96 132, 78 222, 110 300 C 122 332, 142 354, 158 364 C 132 322, 120 272, 124 220 C 128 166, 144 112, 170 78 Z"/>
-  </g>
-
-  <path d="M 197 20 C 197 20, 297 168, 297 246 A 100 100 0 1 1 97 246 C 97 168, 197 20, 197 20 Z"/>
+  <rect x="184" y="30" width="32" height="30" rx="7"/>
+  <rect x="184" y="30" width="32" height="30" rx="7" transform="rotate(30 200 212)"/>
+  <rect x="184" y="30" width="32" height="30" rx="7" transform="rotate(60 200 212)"/>
+  <rect x="184" y="30" width="32" height="30" rx="7" transform="rotate(90 200 212)"/>
+  <rect x="184" y="30" width="32" height="30" rx="7" transform="rotate(120 200 212)"/>
+  <rect x="184" y="30" width="32" height="30" rx="7" transform="rotate(150 200 212)"/>
+  <rect x="184" y="30" width="32" height="30" rx="7" transform="rotate(180 200 212)"/>
+  <rect x="184" y="30" width="32" height="30" rx="7" transform="rotate(210 200 212)"/>
+  <rect x="184" y="30" width="32" height="30" rx="7" transform="rotate(240 200 212)"/>
+  <rect x="184" y="30" width="32" height="30" rx="7" transform="rotate(270 200 212)"/>
+  <rect x="184" y="30" width="32" height="30" rx="7" transform="rotate(300 200 212)"/>
+  <rect x="184" y="30" width="32" height="30" rx="7" transform="rotate(330 200 212)"/>
+  <circle cx="200" cy="212" r="140" fill="none" stroke="#000" stroke-width="38"/>
 </svg>

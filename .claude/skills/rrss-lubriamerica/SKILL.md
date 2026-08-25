@@ -55,16 +55,27 @@ Escala sobre el lienzo de 1080×1350:
 
 | Rol | Tamaño | Peso | Notas |
 |---|---|---|---|
-| Numeral | 300px | 900 | Naranja. Centrado contra el bloque del titular. |
+| Numeral | 290px | 900 | Naranja con trazo blanco de 8px. Centrado contra el bloque del titular. |
 | Titular | 72px | 700 | `line-height: 1.02`. Máximo 3 líneas. |
 | Remate (portada) | 64px | 900 itálica | Mayúsculas. |
-| NO | 78px | 900 | |
+| NO | 60px | 900 | |
 | Eyebrow | 26px | 700 | Mayúsculas, `letter-spacing: .06em`, naranja. |
 | Cuerpo | 28px | 500 | `line-height: 1.35`. Máximo 4 líneas. |
 | Handle | 34px | 700 | |
 
-Nunca centres un titular. Todo el texto de la zona inferior se alinea a la izquierda
-del margen; lo único centrado en la placa es el handle del pie.
+### Un solo margen para el texto
+
+Todo el texto corrido —titular, cuerpo y el remate de portada— arranca en la misma
+vertical: `--texto`, a 252px del borde. Ese margen no se negocia por placa; es lo que
+hace que el carrusel se lea como una serie y no como cinco piezas sueltas.
+
+A la izquierda de esa vertical queda un canal reservado para los elementos que **no**
+son texto: el numeral, y el badge con el NO. Ese canal mide exactamente lo mismo en
+las dos plantillas, y la regla vertical del desmentido cae justo en el margen, marcándolo.
+
+Si el titular necesita más aire, se baja el cuerpo del texto, nunca se mueve el margen.
+
+Nunca centres un titular. Lo único centrado en la placa es el handle del pie.
 
 ## Formatos
 

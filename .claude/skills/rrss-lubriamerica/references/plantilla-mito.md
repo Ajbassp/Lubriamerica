@@ -36,18 +36,30 @@ el ancho y se estira la foto; los tamaños de texto no cambian.
 
 | Elemento | Tamaño | Peso | Color | Notas |
 |---|---|---|---|---|
-| Numeral | 300px | 900 | `#ff7400` | Columna de 172px, canal de 28px. `line-height: .8` y `top: -8px` de corrección óptica; va centrado verticalmente contra el bloque del titular, no contra su primera línea. |
-| Titular | 72px | 700 | `#f9f7f6` | `line-height: 1.02`. 3 líneas máx. Corta con `<br>` donde caiga bien, no confíes en el flujo. |
-| Badge | ⌀78px | — | `#e01b1b` | Círculo sólido, aspa blanca de 6px. |
-| NO | 78px | 900 | `#f9f7f6` | Pegado al badge, 22px de separación. |
-| Regla | 5×88px | — | `#f9f7f6` | Vertical, separa el NO del cuerpo. 6px de margen a cada lado. |
-| Eyebrow | 26px | 700 | `#ff7400` | Mayúsculas, `letter-spacing: .06em`. Opcional, encima del cuerpo. |
-| Cuerpo | 28px | 500 | `#f9f7f6` | `line-height: 1.35`, `max-width: 640px`, 4 líneas máx. |
-| Handle | 34px | 700 | `#f9f7f6` | Centrado, glifo de Instagram a 38px. `bottom: 60px`. |
+| Numeral | 290px | 900 | `#ff7400` + trazo `#f9f7f6` 8px | `paint-order: stroke fill`, para que el trazo quede por fuera y el naranja conserve su grosor. Centrado contra el bloque del titular, con `top: -8px` de corrección óptica. |
+| Titular | 72px | 700 | `#f9f7f6` | `line-height: 1.02`. 3 líneas máx. Arranca en `--texto`. |
+| Badge | ⌀62px | — | `#e01b1b` | Círculo sólido, aspa blanca. |
+| NO | 60px | 900 | `#f9f7f6` | Dentro del canal izquierdo, junto al badge. |
+| Regla | 5×78px | — | `#f9f7f6` | `margin-left: auto`: cae exactamente sobre el margen del texto y lo marca. |
+| Eyebrow | 26px | 700 | `#ff7400` | Mayúsculas, `letter-spacing: .06em`. Opcional. |
+| Cuerpo | 28px | 500 | `#f9f7f6` | `line-height: 1.35`, `text-wrap: balance`, 4 líneas máx. Arranca en `--texto`. |
+| Handle | 34px | 700 | `#f9f7f6` | Centrado, `bottom: 60px`. |
 
-Medidas verificadas sobre el render: con estos valores el numeral mide 194px de alto y
-el bloque del titular 195px, y sus centros coinciden. Si tocas el tamaño del titular,
-vuelve a medir el PNG en vez de estimar a ojo.
+### El canal izquierdo
+
+```
+72        252                                          1008
+├────canal────┤├──────────── texto corrido ─────────────┤
+│  numeral    ││  titular                               │
+│  badge+NO│  ││  cuerpo                                │
+      regla ──┘   (la regla marca el margen)
+```
+
+El canal mide `--texto - --margen - --canal`. Numeral y veredicto lo ocupan por
+completo; nada de texto corrido entra ahí.
+
+Medidas verificadas sobre el render: titular y cuerpo arrancan los dos en x=254.
+Si tocas el tamaño del titular, vuelve a medir el PNG en vez de estimar a ojo.
 
 ## Zona inferior — portada
 
