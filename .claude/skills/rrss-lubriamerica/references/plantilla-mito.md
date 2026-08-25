@@ -65,9 +65,11 @@ Si tocas el tamaño del titular, vuelve a medir el PNG en vez de estimar a ojo.
 
 La portada rompe la columna: el numeral **se mete dentro del titular** como primera
 letra de la frase ("**3** cosas que creías sobre...") en 232px, y debajo va el remate
-en itálica Black de 64px con el badge ✕ al final de la línea.
+en itálica Black de 90px con el badge ✕ al final de la línea.
 
 - El remate va en mayúsculas y siempre cierra la promesa: `Y NO SON CIERTAS`.
+- El badge de la portada (⌀86px, mayor que el de los slides) se ancla al margen
+  derecho con `justify-content: space-between`, no pegado al texto.
 - La portada no lleva bloque de cuerpo. Nada de explicación: la explicación es el swipe.
 
 ## Errores frecuentes al exportar

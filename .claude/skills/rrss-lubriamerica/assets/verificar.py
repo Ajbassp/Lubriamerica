@@ -55,9 +55,11 @@ def main(ruta):
     for y0, y1, xs in bandas(px, w, h):
         for x0, x1 in bloques(xs):
             centrado = abs(x0 - (w - x1)) <= TOLERANCIA
+            derecha  = abs(x1 - (ANCHO - MARGEN)) <= TOLERANCIA
             if abs(x0 - MARGEN) <= TOLERANCIA:   est = "margen exterior"
             elif abs(x0 - TEXTO) <= TOLERANCIA:  est = "margen de texto"
             elif centrado:                       est = "centrado"
+            elif derecha:                        est = "pegado al margen derecho"
             else:
                 est = f"FUERA: arranca en {x0}"; fallos += 1
             if x1 > ANCHO - MARGEN + TOLERANCIA:

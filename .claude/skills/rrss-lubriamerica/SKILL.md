@@ -57,7 +57,7 @@ Escala sobre el lienzo de 1080×1350:
 |---|---|---|---|
 | Numeral | 290px | 900 | Naranja con trazo blanco de 8px, `paint-order: stroke fill`. Centrado contra el bloque del titular. |
 | Titular | 72px | 700 | `line-height: 1.02`. Máximo 3 líneas. |
-| Remate (portada) | 64px | 900 itálica | Mayúsculas. |
+| Remate (portada) | 90px | 900 itálica | Mayúsculas. Ocupa el ancho del bloque. |
 | NO | 60px | 900 | |
 | Eyebrow | 26px | 700 | Mayúsculas, `letter-spacing: .06em`, naranja. |
 | Cuerpo | 28px | 500 | `line-height: 1.35`. Máximo 4 líneas. |
@@ -83,7 +83,13 @@ Por la derecha, nada cruza los 1008px. El texto queda en bandera —las líneas 
 tienen por qué terminar iguales—, pero ninguna se pasa.
 
 El remate de portada va al margen exterior, alineado con el numeral, no con el
-titular: es un bloque, no una línea más del titular.
+titular: es un bloque, no una línea más del titular. Y su badge se empuja hasta el
+margen derecho, de modo que remate y titular midan lo mismo y el conjunto cierre
+como un rectángulo. El badge marca el margen derecho igual que la regla marca el de
+texto: los dos son la retícula hecha visible.
+
+Por eso el remate se dimensiona para llenar el ancho del bloque. Si queda corto, el
+badge se descuelga y el rectángulo se deshace.
 
 Si el titular pide más aire, se mueve el bloque hacia abajo. El margen no se toca.
 

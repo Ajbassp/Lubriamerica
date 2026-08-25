@@ -91,12 +91,15 @@ body{
   font-size:232px;line-height:.76;
 }
 .portada .remate{
-  clear:both;display:flex;align-items:center;gap:26px;margin-top:30px;
+  clear:both;display:flex;align-items:center;margin-top:30px;
+  /* El badge se va al extremo derecho: cierra el bloque contra el margen
+     derecho y hace que el remate mida lo mismo que el titular. */
+  justify-content:space-between;
   /* Vuelve al margen exterior, alineado con el numeral: el remate es un
      elemento de bloque, no texto del canal derecho. El -6px compensa el
      lateral que la itálica Black deja antes del primer trazo. */
   margin-left:-6px;
-  font-size:64px;font-weight:900;font-style:italic;text-transform:uppercase;
+  font-size:90px;font-weight:900;font-style:italic;text-transform:uppercase;
 }
 
 /* ── Bloque del desmentido ────────────────────────────────────────── */
@@ -108,6 +111,8 @@ body{
   flex:0 0 calc(var(--texto) - var(--margen) - var(--canal));
   display:flex;align-items:center;gap:12px;
 }
+.portada .remate .badge{width:86px;height:86px}
+.portada .remate .badge svg{width:38px;height:38px}
 .badge{flex:0 0 auto;width:62px;height:62px;border-radius:50%;background:var(--rojo);
   display:grid;place-items:center}
 .badge svg{width:27px;height:27px;stroke:var(--blanco);stroke-width:6;stroke-linecap:round}
