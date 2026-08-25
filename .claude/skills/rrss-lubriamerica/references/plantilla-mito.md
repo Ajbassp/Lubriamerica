@@ -58,7 +58,10 @@ el ancho y se estira la foto; los tamaños de texto no cambian.
 El canal mide `--texto - --margen - --canal`. Numeral y veredicto lo ocupan por
 completo; nada de texto corrido entra ahí.
 
-Medidas verificadas sobre el render: titular y cuerpo arrancan los dos en x=254.
+Medidas verificadas sobre el render: titular y cuerpo arrancan los dos en x=254, y
+el numeral cubre el bloque de titular con menos de 8px de desfase arriba y abajo.
+El canal es de 12px, así que el numeral queda pegado al texto; con un "1" el aire
+crece porque el dígito es más estrecho, y eso es correcto.
 Si tocas el tamaño del titular, vuelve a medir el PNG en vez de estimar a ojo.
 
 ## Zona inferior — portada

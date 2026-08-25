@@ -55,7 +55,7 @@ Escala sobre el lienzo de 1080×1350:
 
 | Rol | Tamaño | Peso | Notas |
 |---|---|---|---|
-| Numeral | 290px | 900 | Naranja con trazo blanco de 8px, `paint-order: stroke fill`. Centrado contra el bloque del titular. |
+| Numeral | 290px | 900 | Naranja con trazo blanco de 8px, `paint-order: stroke fill`. Cubre el alto del bloque de titular, borde a borde. |
 | Titular | 72px | 700 | `line-height: 1.02`. Máximo 3 líneas. |
 | Remate (portada) | 90px | 900 itálica | Mayúsculas. Ocupa el ancho del bloque. |
 | NO | 60px | 900 | |
@@ -94,6 +94,15 @@ badge se descuelga y el rectángulo se deshace.
 Si el titular pide más aire, se mueve el bloque hacia abajo. El margen no se toca.
 
 Nunca centres un titular. Lo único centrado en la placa es el handle del pie.
+
+### El numeral cubre el titular
+
+El numeral no es un adorno al lado del texto: su alto es el alto del bloque de
+titular. Arriba coincide con el tope de la primera línea, abajo con el pie de la
+última. Si el titular pasa de 2 a 3 líneas, el numeral crece con él.
+
+Ese es el ajuste que más veces se hace mal, porque un numeral 30px corto parece
+correcto en pantalla y se lee como descuidado en el feed. No lo estimes: mídelo.
 
 ### Compruébalo, no lo mires
 

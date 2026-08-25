@@ -18,7 +18,7 @@
   --rojo:#e01b1b;
   --margen:72px;     /* borde exterior de la placa */
   --texto:252px;     /* margen único de TODO el texto corrido: titular y cuerpo */
-  --canal:20px;      /* aire entre el numeral y el texto */
+  --canal:12px;      /* aire entre el numeral y el texto */
   --stroke:8px;      /* trazo blanco del numeral */
   --marca:url("logo/marca.svg");   /* engranaje de la marca de agua */
 }
@@ -88,7 +88,8 @@ body{
 .portada .numeral{
   float:left;width:calc(var(--texto) - var(--margen) - var(--canal));
   margin-right:var(--canal);
-  font-size:232px;line-height:.76;
+  position:relative;top:-9px;      /* corrección óptica, medida sobre el render */
+  font-size:290px;line-height:.76;
 }
 .portada .remate{
   clear:both;display:flex;align-items:center;margin-top:30px;
