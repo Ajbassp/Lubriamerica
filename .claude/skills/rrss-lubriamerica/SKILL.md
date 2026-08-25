@@ -39,15 +39,29 @@ Fuera de ese caso, el naranja vive sobre gris o sobre foto oscurecida.
 
 ## Tipografía
 
-Display y cuerpo salen de la misma familia; la jerarquía la cargan el peso y el tamaño,
-no un segundo tipo. `Montserrat` (variable, incluida en `assets/fonts/`) es la referencia:
+**Kanit**, en tres pesos, cada uno con un trabajo asignado. No hay segunda familia: la
+jerarquía la cargan el peso y el tamaño.
 
-- **Titular** — 800, `line-height: 0.98`, `letter-spacing: -0.01em`. Máximo 3 líneas.
-- **Numeral** — 900, tamaño desproporcionado (unas 4 veces el titular). Es figura, no texto.
-- **Remate** — 800 itálica, mayúsculas. Solo en portada.
-- **Eyebrow** — 700 mayúsculas, `letter-spacing: 0.06em`, naranja.
-- **Cuerpo** — 600, `line-height: 1.35`. Máximo 4 líneas.
-- **Handle** — 700, centrado en el pie.
+- **Medium (500)** — cuerpo y textos de relleno. Todo lo que se lee corrido.
+- **Bold (700)** — titulares, subtítulos, eyebrows, el handle del pie.
+- **Black (900)** — numerales, el NO, y las palabras que deben destacar dentro de una frase.
+
+Black es el peso caro de la marca. Si todo destaca, no destaca nada: un titular en Bold
+con una palabra en Black funciona, un titular entero en Black no dice nada. Para
+destacar dentro de un texto se envuelve la palabra en `<span class="clave">`, que ya
+está definido tanto para el titular como para el cuerpo.
+
+Escala sobre el lienzo de 1080×1350:
+
+| Rol | Tamaño | Peso | Notas |
+|---|---|---|---|
+| Numeral | 300px | 900 | Naranja. Centrado contra el bloque del titular. |
+| Titular | 72px | 700 | `line-height: 1.02`. Máximo 3 líneas. |
+| Remate (portada) | 64px | 900 itálica | Mayúsculas. |
+| NO | 78px | 900 | |
+| Eyebrow | 26px | 700 | Mayúsculas, `letter-spacing: .06em`, naranja. |
+| Cuerpo | 28px | 500 | `line-height: 1.35`. Máximo 4 líneas. |
+| Handle | 34px | 700 | |
 
 Nunca centres un titular. Todo el texto de la zona inferior se alinea a la izquierda
 del margen; lo único centrado en la placa es el handle del pie.
@@ -122,6 +136,9 @@ Las placas se arman en HTML y se exportan a PNG con Chromium:
 cd .claude/skills/rrss-lubriamerica/assets
 ./render.sh mi-pieza.html ../../../salida/slide-1.png
 ```
+
+Las dos plantillas comparten `placa.css`; ahí viven los tokens y toda la escala. Una
+pieza nueva es una copia del HTML con el contenido cambiado, nunca CSS duplicado.
 
 `render.sh` usa `headless_shell` a propósito: el binario completo de Chromium descuenta
 unos 88px de altura de ventana y recorta el handle del pie sin avisar.

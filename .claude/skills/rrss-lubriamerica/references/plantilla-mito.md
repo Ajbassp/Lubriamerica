@@ -36,20 +36,24 @@ el ancho y se estira la foto; los tamaños de texto no cambian.
 
 | Elemento | Tamaño | Peso | Color | Notas |
 |---|---|---|---|---|
-| Numeral | 230px | 900 | `#ff7400` | Columna izquierda de 150px, `line-height: .8`. Su tope se alinea con el tope de la primera línea del titular. |
-| Titular | 66px | 800 | `#f9f7f6` | `line-height: .98`. 3 líneas máx. Corta con `<br>` donde caiga bien, no confíes en el flujo. |
-| Badge ✕ | ⌀78px | — | `#e01b1b` | Círculo sólido, aspa blanca de 6px. |
-| NO | 76px | 900 | `#f9f7f6` | Pegado al badge, 20px de separación. |
-| Regla | 5×86px | — | `#f9f7f6` | Vertical, separa el NO del cuerpo. 24px a cada lado. |
-| Eyebrow | 26px | 700 | `#ff7400` | Mayúsculas, `letter-spacing: .06em`. Opcional, va encima del cuerpo. |
-| Cuerpo | 27px | 600 | `#f9f7f6` | `line-height: 1.35`, 4 líneas máx. |
-| Handle | 34px | 700 | `#f9f7f6` | Centrado, con el glifo de Instagram a 38px. `bottom: 60px`. |
+| Numeral | 300px | 900 | `#ff7400` | Columna de 172px, canal de 28px. `line-height: .8` y `top: -8px` de corrección óptica; va centrado verticalmente contra el bloque del titular, no contra su primera línea. |
+| Titular | 72px | 700 | `#f9f7f6` | `line-height: 1.02`. 3 líneas máx. Corta con `<br>` donde caiga bien, no confíes en el flujo. |
+| Badge | ⌀78px | — | `#e01b1b` | Círculo sólido, aspa blanca de 6px. |
+| NO | 78px | 900 | `#f9f7f6` | Pegado al badge, 22px de separación. |
+| Regla | 5×88px | — | `#f9f7f6` | Vertical, separa el NO del cuerpo. 6px de margen a cada lado. |
+| Eyebrow | 26px | 700 | `#ff7400` | Mayúsculas, `letter-spacing: .06em`. Opcional, encima del cuerpo. |
+| Cuerpo | 28px | 500 | `#f9f7f6` | `line-height: 1.35`, `max-width: 640px`, 4 líneas máx. |
+| Handle | 34px | 700 | `#f9f7f6` | Centrado, glifo de Instagram a 38px. `bottom: 60px`. |
+
+Medidas verificadas sobre el render: con estos valores el numeral mide 194px de alto y
+el bloque del titular 195px, y sus centros coinciden. Si tocas el tamaño del titular,
+vuelve a medir el PNG en vez de estimar a ojo.
 
 ## Zona inferior — portada
 
 La portada rompe la columna: el numeral **se mete dentro del titular** como primera
-letra de la frase ("**3** cosas que creías sobre...") en 210px, y debajo va el remate
-en itálica de 62px con el badge ✕ al final de la línea.
+letra de la frase ("**3** cosas que creías sobre...") en 232px, y debajo va el remate
+en itálica Black de 64px con el badge ✕ al final de la línea.
 
 - El remate va en mayúsculas y siempre cierra la promesa: `Y NO SON CIERTAS`.
 - La portada no lleva bloque de cuerpo. Nada de explicación: la explicación es el swipe.

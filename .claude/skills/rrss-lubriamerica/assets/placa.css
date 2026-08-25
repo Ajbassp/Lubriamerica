@@ -1,0 +1,104 @@
+/* Sistema de placa Lubriamérica — 1080×1350.
+   Roles de peso (definidos por la marca):
+     500 Medium → cuerpo y textos de relleno
+     700 Bold   → titulares y subtítulos
+     900 Black  → numerales, palabras clave, lo que debe destacar   */
+
+@font-face{font-family:Kanit;src:url("fonts/Kanit-Medium.ttf")format("truetype");font-weight:500;font-style:normal;font-display:block}
+@font-face{font-family:Kanit;src:url("fonts/Kanit-Bold.ttf")format("truetype");font-weight:700;font-style:normal;font-display:block}
+@font-face{font-family:Kanit;src:url("fonts/Kanit-Black.ttf")format("truetype");font-weight:900;font-style:normal;font-display:block}
+@font-face{font-family:Kanit;src:url("fonts/Kanit-BoldItalic.ttf")format("truetype");font-weight:700;font-style:italic;font-display:block}
+@font-face{font-family:Kanit;src:url("fonts/Kanit-BlackItalic.ttf")format("truetype");font-weight:900;font-style:italic;font-display:block}
+
+:root{
+  --naranja:#ff7400;
+  --naranja-oscuro:#c96410;
+  --gris:#272726;
+  --blanco:#f9f7f6;
+  --rojo:#e01b1b;
+  --margen:72px;
+  --columna:172px;   /* ancho de la columna del numeral */
+  --canal:28px;      /* separación entre columna y texto */
+  --marca:url("logo/marca.svg");   /* engranaje de la marca de agua */
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1350px;overflow:hidden}
+body{
+  position:relative;background:var(--gris);color:var(--blanco);
+  font-family:Kanit,"Liberation Sans",sans-serif;font-weight:500;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ── Foto ─────────────────────────────────────────────────────────── */
+.foto{position:absolute;inset:0 0 490px 0;overflow:hidden;background:#3a3a38}
+.foto img{width:100%;height:100%;object-fit:cover;filter:saturate(.85)brightness(.9)}
+.foto.vacia::after{
+  content:"FOTO 1080×860";position:absolute;inset:0;display:grid;place-items:center;
+  font-size:34px;font-weight:700;letter-spacing:.12em;color:#ffffff26;
+  background:repeating-linear-gradient(135deg,#00000000 0 28px,#ffffff0a 28px 56px),#4a4a47;
+}
+
+/* ── Scrim ────────────────────────────────────────────────────────── */
+.scrim{position:absolute;inset:0;
+  background:linear-gradient(180deg,#27272600 28%,#2727268c 45%,#272726eb 58%,var(--gris) 65%)}
+
+/* ── Marca de agua ────────────────────────────────────────────────── */
+/* El engranaje se pinta como máscara: sirve cualquier PNG o SVG con
+   transparencia y el color del archivo original da igual. */
+.marca{
+  position:absolute;left:58%;bottom:-190px;width:700px;height:700px;
+  transform:translateX(-50%);opacity:.035;background:var(--blanco);
+  -webkit-mask:var(--marca) center/contain no-repeat;
+          mask:var(--marca) center/contain no-repeat;
+}
+
+/* ── Rayado diagonal ──────────────────────────────────────────────── */
+.rayado{position:absolute;opacity:.08;pointer-events:none;
+  background:repeating-linear-gradient(45deg,#f9f7f6 0 3px,#f9f7f600 3px 22px)}
+.rayado.sup{top:0;left:0;width:420px;height:420px;
+  -webkit-mask-image:linear-gradient(155deg,#000 20%,#0000 75%)}
+.rayado.med{top:700px;left:0;width:100%;height:260px;
+  -webkit-mask-image:linear-gradient(180deg,#0000,#000 40%,#0000)}
+
+/* ── Zona de texto ────────────────────────────────────────────────── */
+.contenido{position:absolute;left:var(--margen);right:var(--margen);bottom:168px}
+
+.titular{font-size:72px;font-weight:700;line-height:1.02;letter-spacing:-.005em}
+.titular .clave{font-weight:900}          /* palabra que debe destacar */
+
+/* Slide interior: numeral en columna */
+.interior .fila{display:flex;align-items:center;gap:var(--canal)}
+.interior .numeral{
+  flex:0 0 var(--columna);position:relative;top:-8px;   /* corrección óptica: la caja
+     de línea deja aire de descendente debajo del dígito */
+  font-size:300px;font-weight:900;line-height:.8;color:var(--naranja);
+}
+
+/* Portada: numeral dentro del titular */
+.portada .numeral{
+  float:left;width:var(--columna);margin-right:var(--canal);
+  font-size:232px;font-weight:900;line-height:.76;color:var(--naranja);
+}
+.portada .remate{
+  clear:both;display:flex;align-items:center;gap:26px;margin-top:30px;
+  font-size:64px;font-weight:900;font-style:italic;text-transform:uppercase;
+}
+
+/* ── Bloque del desmentido ────────────────────────────────────────── */
+.desmentido{display:flex;align-items:center;gap:22px;margin-top:44px}
+.badge{flex:0 0 auto;width:78px;height:78px;border-radius:50%;background:var(--rojo);
+  display:grid;place-items:center}
+.badge svg{width:34px;height:34px;stroke:var(--blanco);stroke-width:6;stroke-linecap:round}
+.no{font-size:78px;font-weight:900;line-height:1}
+.regla{flex:0 0 auto;width:5px;height:88px;background:var(--blanco);margin:0 6px}
+.eyebrow{font-size:26px;font-weight:700;color:var(--naranja);
+  text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+.cuerpo{font-size:28px;font-weight:500;line-height:1.35;max-width:640px}
+.cuerpo .clave{font-weight:900}
+
+/* ── Pie ──────────────────────────────────────────────────────────── */
+.pie{position:absolute;left:0;right:0;bottom:60px;
+  display:flex;align-items:center;justify-content:center;gap:14px;
+  font-size:34px;font-weight:700}
+.pie svg{width:38px;height:38px;fill:none;stroke:var(--blanco);stroke-width:2.2}
