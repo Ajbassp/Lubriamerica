@@ -143,6 +143,9 @@ pieza nueva es una copia del HTML con el contenido cambiado, nunca CSS duplicado
 `render.sh` usa `headless_shell` a propósito: el binario completo de Chromium descuenta
 unos 88px de altura de ventana y recorta el handle del pie sin avisar.
 
+Revisa el PNG antes de darlo por bueno, y revísalo mirándolo, no asumiendo: la marca de
+agua puede desaparecer sin que nada falle.
+
 Revisa el PNG antes de darlo por bueno. Los errores que aparecen al exportar y no en el
 navegador son casi siempre titulares que pasaron de 3 líneas o el numeral chocando con
 la primera línea del texto.

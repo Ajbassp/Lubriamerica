@@ -7,12 +7,13 @@
 | `plantilla-carrusel.html` | Slide interior: numeral en columna + desmentido. |
 | `render.sh` | Exporta a PNG. |
 | `fonts/Kanit-*.ttf` | Listo. |
-| `logo/marca.svg` | **Provisional.** Ver abajo. |
+| `logo/marca.svg` | Calcado del isotipo. Reemplazable por el original. |
 
-## Falta: el engranaje del logo
+## El engranaje
 
-`logo/marca.svg` es un engranaje genérico dibujado a mano. Hay que reemplazarlo por el
-del logotipo real.
+`logo/marca.svg` es un calco del isotipo (engranaje + gota + trazo), hecho a mano a
+partir del logotipo. A 3.5% de opacidad cumple, pero si aparece el archivo original
+conviene reemplazarlo.
 
 La placa pinta el engranaje **como máscara**, no como imagen:
 
@@ -30,6 +31,12 @@ Lo que implica para el archivo que entregues:
 - **Solo el engranaje**, sin la gota ni el texto.
 
 Para cambiarlo basta con dejar el archivo en `logo/` y apuntar `--marca` en `placa.css`.
+
+**Cuidado al exportar:** Chromium bloquea el archivo de la máscara como recurso
+cross-origin cuando la página se abre con `file://`, y la placa sale sin engranaje
+**sin dar ningún error**. `render.sh` ya pasa `--allow-file-access-from-files` para
+evitarlo. Si alguna vez abres la plantilla a mano en el navegador y no ves la marca de
+agua, es esto, no el archivo.
 Guarda también el logotipo completo como `logo/lubriamerica.svg` para las piezas que sí
 lo llevan (anuncios, catálogo). En las placas de carrusel no va.
 

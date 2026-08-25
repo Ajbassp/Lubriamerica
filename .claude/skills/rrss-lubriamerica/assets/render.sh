@@ -23,7 +23,10 @@ if [ -z "$BIN" ]; then
 fi
 [ -z "$BIN" ] && { echo "No encuentro Chromium." >&2; exit 1; }
 
+# --allow-file-access-from-files: sin esto Chromium bloquea el SVG de la marca de
+# agua como recurso cross-origin y la placa sale sin engranaje, sin dar ningún error.
 "$BIN" --headless --no-sandbox --disable-gpu --hide-scrollbars \
+  --allow-file-access-from-files \
   --force-device-scale-factor=1 --window-size="${W},${H}" \
   --screenshot="$OUT" "file://$(realpath "$IN")" 2>/dev/null
 
